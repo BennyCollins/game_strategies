@@ -7,7 +7,7 @@ The **main()** function takes as arguments minimum red fraction (*threshold*, de
 
 This function finds the frequency of wins for each group of game repetitions, doing this *n* times (sample size=*n*) for the given minimum red fraction. The function then uses this data to form a histogram, plotting binned frequencies of wins against their associated relative likelihoods. The final step for this function is to compute a high-confidence interval (minimum 95%) for this histogram in order to provide a range of win frequencies that our strategy win probability is highly likely to fall within.
 
-![](/code/game_strategies/src/confidence.png)
+![](~/code/game_strategies/src/confidence.png)
 *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold*
 
 ## **strategy_outcome_breakdown_graph()** Function: (n=100000)
