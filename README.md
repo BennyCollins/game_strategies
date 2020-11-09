@@ -10,22 +10,27 @@ This function finds the frequency of wins for each group of game repetitions, do
 ### Histogram Analysis of Win Frequencies
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_50.png)
+
 *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.5. The frequency range 0.470500 - 0.533533 represents a 95.38% confidence interval.*
-Format: ![Histograms with different minimum red fractions](/src/freq_histograms/)
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_60.png)
+
 *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.6. The frequency range 0.469770 - 0.533066 represents a 95.77% confidence interval.*
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_70.png)
+
 *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.7. The frequency range 0.467951 - 0.527918 represents a 95.58% confidence interval.*
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_80.png)
+
 *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.8. The frequency range 0.467308 - 0.529785 represents a 95.99% confidence interval.*
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_90.png)
+
 *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.9. The frequency range 0.466200 - 0.528764 represents a 95.68% confidence interval.*
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_100.png)
+
 *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=1.0. The frequency range 0.468761 - 0.529014 represents a 95.32% confidence interval.*
 
 We can see that for each different minimum red threshold value, the histograms take the shape of a Normal distribution, each centred approximately around the frequency 0.5. All of the confidence intervals that have been generated are over very similar ranges. The most favourable frequency range for odds of winning is 0.470500 - 0.533533, which occurs when the minimum red threshold is 0.5. It could be argued that this suggests that the first strategy will yield the highest frequency of wins, however the difference in ranges for the thresholds is negligable enough to say that this difference may just be down to random chance.
