@@ -6,7 +6,26 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import click
-from lib import red_percentage_strat
+
+
+def red_percentage_strat(min_red_fraction):
+    BLACK = 0
+    RED = 1
+    black_cards = 26 * [BLACK]
+    red_cards = 26 * [RED]
+    unshuffled_deck = black_cards + red_cards
+    shuffled_deck = np.random.permutation(unshuffled_deck)
+    red_cards_remaining = 26
+    total_cards_remaining = 52
+    for i, card in enumerate(shuffled_deck):
+        red_cards_remaining -= card
+        total_cards_remaining -= 1
+        if red_cards_remaining > 1:
+            if red_cards_remaining / total_cards_remaining > min_red_fraction:
+                break
+        else:
+            break
+    return shuffled_deck[i+1]
 
 
 def game_repetitions_win_mean(percentage, number_of_repeats):
@@ -14,11 +33,11 @@ def game_repetitions_win_mean(percentage, number_of_repeats):
     return win_count.mean()
 
 
-def win_frequencies(red_threshold, iterations):
-    win_frequencies = []
-    for i in range(1, iterations):
-        win_frequencies.append(game_repetitions_win_mean(red_threshold, i))
-    return win_frequencies
+def generate_histogram(red_threshold, number_of_repeats, sample_size):
+    freq_array = np.array([game_repetitions_win_mean(red_threshold, number_of_repeats) for i in range(sample_size)])
+    likelihoods, bin_edges, patches = plt.hist(freq_array, bins='auto', edgecolor='black', density=True)
+    bin_width = bin_edges[1] - bin_edges[0]
+    return likelihoods, bin_width, bin_edges, patches
 
 
 def compute_high_confidence_interval(likelihoods, bin_width, bin_edges, patches):
@@ -39,22 +58,16 @@ def compute_high_confidence_interval(likelihoods, bin_width, bin_edges, patches)
     return start_index, end_index
 
 
-def generate_histogram(red_threshold, number_of_repeats, sample_size):
-    freq_array = np.array([game_repetitions_win_mean(red_threshold, number_of_repeats) for i in range(sample_size)])
-    likelihoods, bin_edges, patches = plt.hist(freq_array, bins='auto', edgecolor='black', density=True)
-    bin_width = bin_edges[1] - bin_edges[0]
-    return likelihoods, bin_width, bin_edges, patches
-
-
 @click.command()
 @click.option("--threshold",default=0.5, help="Red threshold")
-@click.option("--repeats", default=100, help="Number of games")
-@click.option("--sample", default=100, help="Sample size")
+@click.option("--repeats", default=1000, help="Number of games")
+@click.option("--sample", default=10000, help="Sample size")
 def main(threshold, repeats, sample):
     likelihoods, bin_width, bin_edges, patches = generate_histogram(threshold, repeats, sample)
     start_index, end_index = compute_high_confidence_interval(likelihoods, bin_width, bin_edges, patches)
     plt.xlabel('Binned Frequency')
     plt.ylabel('Relative Likelihood')
+    plt.title('Relative Likelihoods of\nWin Frequencies')
     if sample * repeats >= 100000:
         plt.savefig("confidence.png")
         plt.show()
