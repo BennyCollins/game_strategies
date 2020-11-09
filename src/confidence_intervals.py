@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 #Data Science Bookcamp
-#Task 1 Confidence Intervals For Probability of Strategy Success
+#Task 1 Confidence Intervals for Probability of Strategy Success
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -59,7 +59,7 @@ def compute_high_confidence_interval(likelihoods, bin_width, bin_edges, patches)
 
 
 @click.command()
-@click.option("--threshold",default=0.5, help="Red threshold")
+@click.option("--threshold",default=1.0, help="Red threshold")
 @click.option("--repeats", default=1000, help="Number of games")
 @click.option("--sample", default=10000, help="Sample size")
 def main(threshold, repeats, sample):
@@ -67,9 +67,21 @@ def main(threshold, repeats, sample):
     start_index, end_index = compute_high_confidence_interval(likelihoods, bin_width, bin_edges, patches)
     plt.xlabel('Binned Frequency')
     plt.ylabel('Relative Likelihood')
-    plt.title('Relative Likelihoods of\nWin Frequencies')
-    if sample * repeats >= 100000:
-        plt.savefig("confidence.png")
+    plt.suptitle('Relative Likelihoods of Win Frequencies', fontsize=14, fontweight='bold')
+    plt.title(f"Min Red Threshold={threshold}, Game Repeats={repeats}, Sample Size={sample}", fontsize=8)
+    if sample * repeats >= 10000:
+        if threshold == 0.5:
+            plt.savefig("confidence_histogram_50.png")
+        if threshold == 0.6:
+            plt.savefig("confidence_histogram_60.png")
+        if threshold == 0.7:
+            plt.savefig("confidence_histogram_70.png")
+        if threshold == 0.8:
+            plt.savefig("confidence_histogram_80.png")
+        if threshold == 0.9:
+            plt.savefig("confidence_histogram_90.png")
+        if threshold == 1.0:
+            plt.savefig("confidence_histogram_100.png")
         plt.show()
     else:
         plt.show()
