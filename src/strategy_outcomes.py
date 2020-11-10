@@ -92,7 +92,7 @@ def generate_strategy_outcome_breakdown_graph(number_of_repeats):
 
 
 @click.command()
-@click.option('--sob_repeats', default=1000000, help='Number of repeats.')
+@click.option('--sob_repeats', default=10000, help='Number of repeats.')
 def strategy_outcome_breakdown_graph(sob_repeats):
     generate_strategy_outcome_breakdown_graph(sob_repeats)
     plt.xlabel('Minimum Reds Percentage')

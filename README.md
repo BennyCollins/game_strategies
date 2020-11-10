@@ -35,7 +35,7 @@ This function finds the frequency of wins for each group of game repetitions, do
 
 We can see that for each different minimum red threshold value, the histograms take the shape of a Normal distribution, each centred approximately around the frequency 0.5. All of the confidence intervals that have been generated are over very similar ranges. The most favourable frequency range for odds of winning is 0.470500 - 0.533533, which occurs when the minimum red threshold is 0.5. It could be argued that this suggests that the first strategy will yield the highest frequency of wins, however the difference in ranges for the thresholds is negligable enough to say that this difference may just be down to random chance.
 
-## **strategy_outcome_breakdown_graph()** Function: (n=100000)
+## **strategy_outcome_breakdown_graph()** Function:
 The function **strategy_outcome_breakdown_graph()** is used to analyse the occurrence of each of 4 different possible outcomes of our game strategy:
 
 
