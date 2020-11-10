@@ -11,7 +11,10 @@ This function finds the frequency of wins for each group of game repetitions, do
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_50.png)
 
-*Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.5. The frequency range 0.470500 - 0.533533 represents a 95.38% confidence interval.*
+|:--:|
+| *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.5. The frequency range 0.470500 - 0.533533 represents a 95.38% confidence interval.* |
+
+
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_60.png)
 
@@ -39,10 +42,10 @@ We can see that for each different minimum red threshold value, the histograms t
 The function **strategy_outcome_breakdown_graph()** is used to analyse the occurrence of each of 4 different possible outcomes of our game strategy:
 
 
-(A)  Halts: More Than One Red Card Left (Win)
-(B)  Halts: One Red Card Left (Win)
-(C)  Halts: More Than One Red Card Left (Lose)
-(D)  Halts: One Red Card Left (Lose)
+1. Halts: More Than One Red Card Left (Win)
+1. Halts: One Red Card Left (Win)
+1. Halts: More Than One Red Card Left (Lose)
+1. Halts: One Red Card Left (Lose)
 
 
 We use the **red_percentage_strat_index** function, which is a similar to our **red_percentage_strat** function, however it has been modified so the function returns the final card flipped over (win or loss) as well as the number of red cards remaining. Using each pair of values for card colour and remaining red cards, we may sort each game simulation into one of the 4 outcome types listed above.
@@ -53,4 +56,5 @@ We use the **red_percentage_strat_index** function, which is a similar to our **
 
 ![Frequency Graph of Different Outcomes](/src/outcome_freq_red_strategies.png)
 
-We can see from the graph that when the minimum red threshold is set to 0.5, the outcome with the highest frequency of occurence is A)
+We can see from the graph that when the minimum red threshold is set to 0.5, the outcome with the highest frequency of occurence is *Halts: More Than One Red Card Left (Win)*, followed by *Halts: More Than One Red Card Left (Lose)*. This shows that for the lower red threshold values, we generally halt the game before we only have one red left, as it is much easier to satisfy the parameters of more than half of the cards left being red. However, as this parameter increases in value, we can see that these two outcome types decrease in frequency while the other two outcomes increase.
+Once the minimum red threshold has been increased to 0.8, the large-scale changes in frequency have mostly occurred already and the frequencies begin to level out for each outcome ()
