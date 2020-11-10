@@ -10,10 +10,8 @@ This function finds the frequency of wins for each group of game repetitions, do
 ### Histogram Analysis of Win Frequencies
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_50.png)
-
 |:--:|
 | *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.5. The frequency range 0.470500 - 0.533533 represents a 95.38% confidence interval.* |
-
 
 
 ![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_60.png)
