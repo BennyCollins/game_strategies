@@ -38,17 +38,17 @@ We can see that for each different minimum red threshold value, the histograms t
 ## **strategy_outcome_breakdown_graph()** Function: (n=100000)
 The function **strategy_outcome_breakdown_graph()** is used to analyse the occurrence of each of 4 different possible outcomes of our game strategy:
 
-1. Halts: More Than One Red Card Left (Win)
-1. Halts: One Red Card Left (Win)
-1. Halts: More Than One Red Card Left (Lose)
-1. Halts: One Red Card Left (Lose)
+A) Halts: More Than One Red Card Left (Win)
+A) Halts: One Red Card Left (Win)
+A) Halts: More Than One Red Card Left (Lose)
+A) Halts: One Red Card Left (Lose)
 
 We use the **red_percentage_strat_index** function, which is a similar to our **red_percentage_strat** function, however it has been modified so the function returns the final card flipped over (win or loss) as well as the number of red cards remaining. Using each pair of values for card colour and remaining red cards, we may sort each game simulation into one of the 4 outcome types listed above.
 
 **strategy_outcome_breakdown_graph()** takes as an argument the number of repeats for the game (*sob_repeats*, default=10000). The function repeats the game *n* times (*sob_repeats=n*), logging each different type of outcome and adding them to the relevant count of each outcome type. The counts are then each divided by the total number of games played, in order to find out their frequancies of occurence. This is done for every single minimum red fraction from 0.5 up to, and including, 1.0. We then plot a graph showing how the relative frequency of each outcome type is affected by changes in the minimum red fraction used for our strategy.
 
-###Graphical Analysis of Relative Frequencies of Different Outcomes
+### Graphical Analysis of Relative Frequencies of Different Outcomes
 
 ![Frequency Graph of Different Outcomes](/src/outcome_freq_red_strategies.png)
 
-
+We can see from the graph that when the minimum red threshold is set to 0.5, the outcome with the highest frequency of occurence is A)
