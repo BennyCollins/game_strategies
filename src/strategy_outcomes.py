@@ -82,26 +82,25 @@ def generate_strategy_outcome_breakdown_graph(number_of_repeats):
     result_frequency_dict, fractions_of_red_list = s_o_b_ranged_threshold(
         number_of_repeats)
     plt.plot(fractions_of_red_list,
-             result_frequency_dict['A'], '-', label='A) Halts: More Than One Red Card Left (Win)')
+             result_frequency_dict['A'], '-', label='1) Halts: More Than One Red Card Left (Win)')
     plt.plot(fractions_of_red_list,
-             result_frequency_dict['B'], ':', label='B) Halts: One Red Card Left (Win)')
+             result_frequency_dict['B'], ':', label='2) Halts: One Red Card Left (Win)')
     plt.plot(fractions_of_red_list,
-             result_frequency_dict['C'], '-.', label='C) Halts: More Than One Red Card Left (Lose)')
+             result_frequency_dict['C'], '-.', label='3) Halts: More Than One Red Card Left (Lose)')
     plt.plot(fractions_of_red_list,
-             result_frequency_dict['D'], '--', label='D) Halts: One Red Card Left (Lose)')
+             result_frequency_dict['D'], '--', label='4) Halts: One Red Card Left (Lose)')
 
 
 @click.command()
-@click.option('--sob_repeats', default=100000, help='Number of repeats.')
+@click.option('--sob_repeats', default=1000000, help='Number of repeats.')
 def strategy_outcome_breakdown_graph(sob_repeats):
     generate_strategy_outcome_breakdown_graph(sob_repeats)
     plt.xlabel('Minimum Reds Percentage')
     plt.ylabel('Outcome Frequencies')
-    plt.title()
     plt.suptitle('Outcomes Frequencies for Different Strategies', fontsize=14, fontweight='bold')
     plt.title(f"Game Repeats={sob_repeats}", fontsize=8)
     plt.legend()
-    if sob_repeats >= 100000:
+    if sob_repeats >= 1000000:
         plt.savefig("outcome_freq_red_strategies.png")
         plt.show()
     else:
