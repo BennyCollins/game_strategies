@@ -38,10 +38,12 @@ We can see that for each different minimum red threshold value, the histograms t
 ## **strategy_outcome_breakdown_graph()** Function: (n=100000)
 The function **strategy_outcome_breakdown_graph()** is used to analyse the occurrence of each of 4 different possible outcomes of our game strategy:
 
+
 (A)  Halts: More Than One Red Card Left (Win)
 (B)  Halts: One Red Card Left (Win)
 (C)  Halts: More Than One Red Card Left (Lose)
 (D)  Halts: One Red Card Left (Lose)
+
 
 We use the **red_percentage_strat_index** function, which is a similar to our **red_percentage_strat** function, however it has been modified so the function returns the final card flipped over (win or loss) as well as the number of red cards remaining. Using each pair of values for card colour and remaining red cards, we may sort each game simulation into one of the 4 outcome types listed above.
 
