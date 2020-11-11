@@ -9,27 +9,27 @@ This function finds the frequency of wins for each group of game repetitions, do
 
 ### Histogram Analysis of Win Frequencies
 
-![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_50.png)
+![Win Frequencies Histogram](graphs/win_freq_histograms/confidence_histogram_50.png)
 |:--:|
 | *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.5. The frequency range 0.470500 - 0.533533 represents a 95.38% confidence interval.* |
 
-![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_60.png)
+![Win Frequencies Histogram](graphs/win_freq_histograms/confidence_histogram_60.png)
 |:--:|
 | *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.6. The frequency range 0.469770 - 0.533066 represents a 95.77% confidence interval.* |
 
-![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_70.png)
+![Win Frequencies Histogram](graphs/win_freq_histograms/confidence_histogram_70.png)
 |:--:|
 | *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.7. The frequency range 0.467951 - 0.527918 represents a 95.58% confidence interval.* |
 
-![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_80.png)
+![Win Frequencies Histogram](graphs/win_freq_histograms/confidence_histogram_80.png)
 |:--:|
 | *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.8. The frequency range 0.467308 - 0.529785 represents a 95.99% confidence interval.* |
 
-![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_90.png)
+![Win Frequencies Histogram](graphs/win_freq_histograms/confidence_histogram_90.png)
 |:--:|
 | *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=0.9. The frequency range 0.466200 - 0.528764 represents a 95.68% confidence interval.* |
 
-![Win Frequencies Histogram](/src/win_freq_histograms/confidence_histogram_100.png)
+![Win Frequencies Histogram](graphs/win_freq_histograms/confidence_histogram_100.png)
 |:--:|
 | *Histogram computed using game repeats=1000, sample size=10000 and minimum red threshold=1.0. The frequency range 0.468761 - 0.529014 represents a 95.32% confidence interval.* |
 
@@ -51,7 +51,7 @@ We use the **red_percentage_strat_index** function, which is a similar to our **
 
 ### Graphical Analysis of Relative Frequencies of Different Outcomes
 
-![Frequency Graph of Different Outcomes](/src/outcome_freq_red_strategies.png)
+![Frequency Graph of Different Outcomes](graphs/outcome_freq_red_strategies.png)
 
 We can see from the graph that when the minimum red threshold is set to 0.5, the outcome with the highest frequency of occurence is *1) Halts: More Than One Red Card Left (Win)*, followed by *3) Halts: More Than One Red Card Left (Lose)*. This shows that for the lower red threshold values, we generally halt the game before we only have one red left, as it is much easier to satisfy the lower red threshold parameter. However, as this parameter increases in value, we can see that these outcome types *1)* and *3)* decrease in frequency, while the outcome types *2)* and *4)* increase. This is because the higher the minimum red threshold parameter, the less likely we are to satisfy the conditions of our strategy and halt the game before we only have one red card remaining.
 
