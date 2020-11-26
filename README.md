@@ -1,5 +1,11 @@
 # Game Strategies Project
 
+##Intro
+Prerequisites:
+1. Numpy
+1. Matplotlib
+1. Click
+
 ## main() Function:
 Our strategy for the game is simulated by our first function **red_percentage_strat**. We specify a minimum fraction of red cards, which is the required argument for this function (*min_red_fraction*). If the number of red cards remaining, divided by the total number of remaining cards, is larger than our minimum fraction of red cards at any point, then the game is halted. The next card is turned over and we find out if we win or lose (where 1 represents a win and 0 represents a loss). If, however, the number of red cards remaining eventually decreases to 1, then the game is automatically halted and the next card that is turned over determines a win or a loss.
 
