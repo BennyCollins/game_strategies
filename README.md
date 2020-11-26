@@ -1,6 +1,6 @@
 # Game Strategies Project
 
-##Intro
+## Intro
 Prerequisites:
 1. Numpy
 1. Matplotlib
