@@ -60,8 +60,8 @@ def compute_high_confidence_interval(likelihoods, bin_width, bin_edges, patches)
 
 @click.command()
 @click.option("--threshold",default=1.0, help="Red threshold")
-@click.option("--repeats", default=100, help="Number of games")
-@click.option("--sample", default=100, help="Sample size")
+@click.option("--repeats", default=1000, help="Number of games")
+@click.option("--sample", default=1000, help="Sample size")
 def main(threshold, repeats, sample):
     likelihoods, bin_width, bin_edges, patches = generate_histogram(threshold, repeats, sample)
     start_index, end_index = compute_high_confidence_interval(likelihoods, bin_width, bin_edges, patches)
