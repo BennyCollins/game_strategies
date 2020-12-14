@@ -69,7 +69,7 @@ def main(threshold, repeats, sample):
     plt.ylabel('Relative Likelihood')
     plt.suptitle('Relative Likelihoods of Win Frequencies', fontsize=14, fontweight='bold')
     plt.title(f"Min Red Threshold={threshold}, Game Repeats={repeats}, Sample Size={sample}", fontsize=8)
-    if sample * repeats >= 10000:
+    if sample * repeats >= 10000000:
         if threshold == 0.5:
             plt.savefig("confidence_histogram_50.png")
         if threshold == 0.6:
