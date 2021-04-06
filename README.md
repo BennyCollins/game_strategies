@@ -6,8 +6,11 @@ Prerequisites:
 1. Matplotlib
 1. Click
 
-## main() Function:
-Our strategy for the game is simulated by our first function **red_percentage_strat**. We specify a minimum fraction of red cards, which is the required argument for this function (*min_red_fraction*). If the number of red cards remaining, divided by the total number of remaining cards, is larger than our minimum fraction of red cards at any point, then the game is halted. The next card is turned over and we find out if we win or lose (where 1 represents a win and 0 represents a loss). If, however, the number of red cards remaining eventually decreases to 1, then the game is automatically halted and the next card that is turned over determines a win or a loss.
+## Task
+We have been set the task of coming up with a strategy for a simple card game. A standard deck of cards is shuffled and, one-by-one, the cards are turned over. At any point in the game, you may tell the dealer to stop. Once they have stopped, the next card that is turned over will determine the result of the game. If the card is black, then the game is lost, and if the card is red, the game is won.
+
+## main()
+Our strategy for the game is simulated by our first function **red_percentage_strat**. We specify a minimum fraction of red cards, which is the required argument for this function (*min_red_fraction*). If the percentage of remaining cards that are red is larger than our minimum fraction of red cards at any point, then the game is halted. The next card is turned over and we find out if we win or lose (where 1 represents a win and 0 represents a loss). If, however, the number of red cards remaining eventually decreases to 1, then the game is automatically halted and the next card that is turned over determines a win or a loss.
 
 The **main()** function takes as arguments minimum red fraction (*threshold*, default=0.5) for our strategy, as well as the number of times the game is repeated to calculate one win frequency (*repeats*, default=100), and finally the sample size (*sample*, default = 100), i.e. the number of frequencies computed.
 
@@ -41,7 +44,7 @@ This function finds the frequency of wins for each group of game repetitions, do
 
 We can see that for each different minimum red threshold value, the histograms take the shape of a Normal distribution, each centred approximately around the frequency 0.5. All of the confidence intervals that have been generated are over very similar ranges. The most favourable frequency range for odds of winning is 0.470500 - 0.533533, which occurs when the minimum red threshold is 0.5. It could be argued that this suggests that the first strategy will yield the highest frequency of wins, however the difference in ranges for the thresholds is negligable enough to say that this difference may just be down to random chance.
 
-## **strategy_outcome_breakdown_graph()** Function:
+## **strategy_outcome_breakdown_graph()**
 The function **strategy_outcome_breakdown_graph()** is used to analyse the occurrence of each of 4 different possible outcomes of our game strategy:
 
 

@@ -50,7 +50,7 @@ def strategy_outcome_breakdown(fraction_of_red, number_of_repeats):
         success_index_list) - red_more_than_one_successes
     red_more_than_one_failures = len(
         [red_cards_remaining for red_cards_remaining in failure_index_list if red_cards_remaining > 1])
-    one_red_left_failures = len(failure_index_list) - \
+    one_red_left_failures = len(failure_index_list) -
         red_more_than_one_failures
     results = np.array([red_more_than_one_successes, one_red_left_successes,
                         red_more_than_one_failures, one_red_left_failures])
